@@ -21,7 +21,7 @@ Straight quotes surrounding a piece of text (e.g. "double" or 'single') are
 substituted for their correct [curly quotation marks][quotes].
 
 | Before        | After         |
-|:-------------:|:-------------:|
+|---------------|---------------|
 | "Hello world" | “Hello world” |
 | 'Hello world' | ‘Hello world’ |
 
@@ -33,7 +33,7 @@ Hyphens that occur immediately after a numerical value are substituted for an
 [hair spaces][hairspaces].
 
 | Before | After |
-|:------:|:-----:|
+|--------|-------|
 | In the range of 10-20. | In the range of 10–20.  |
 | Upon discovering the errors - all 124 of them - the publisher immediately recalled the books. | Upon discovering the errors — all 124 of them — the publisher immediately recalled the books. |
 
@@ -43,7 +43,7 @@ Straight quotes that occur immediately after a numerical value are substituted
 with [primes][primes].
 
 | Before | After |
-|:------:|:-----:|
+|--------|-------|
 | He stood 6'1" tall. | He stood 6′1″ tall. |
 
 #### Punctuation
@@ -51,7 +51,7 @@ with [primes][primes].
 Three consecutive periods are substituted for an ellipsis.
 
 | Before | After |
-|:------:|:-----:|
+|--------|-------|
 | A long time ago in a galaxy far, far away... | A long time ago in a galaxy far, far away… |
 
 #### Mathematics
@@ -62,7 +62,7 @@ the multiplication symbol and consecutive forward slashes with the division
 symbol, as well as supporting fractions, roman numerals, and the numero symbol.
 
 | Before | After |
-|:------:|------:|
+|:-------|:-----:|
 | 5 * 5 // 5 = 5 | 5 × 5 ÷ 5 = 5 |
 | 5 != 10 | 5 ≠ 10 |
 | 5.1 ~~ 5 | 5.1 ≈ 5 |
