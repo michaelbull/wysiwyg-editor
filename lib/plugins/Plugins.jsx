@@ -61,7 +61,7 @@ export const plugins = [
     ReplaceText('(tm)', '™'),
     ReplaceText('<--', '←'),
     ReplaceText('<..', '⇠'),
-    ReplaceText('-->', '→'),
+    ReplaceText('— >', '→'),
     ReplaceText('..>', '⇢'),
     ReplaceText('^--', '↑'),
     ReplaceText('<-->', '↔'),
@@ -98,6 +98,8 @@ export const plugins = [
     ReplaceText('(bar)', '̄'),
     ReplaceText('(hat)', '̂'),
     ReplaceText('(deg)', '°'),
+    ReplaceText('(celsius)', '℃'),
+    ReplaceText('(farenheit)', '℉'),
     ReplaceText('==', '≡'),
     ReplaceText('>=', '≥'),
     ReplaceText('<=', '≤'),
@@ -229,7 +231,7 @@ export const plugins = [
     /* numero */
     ReplaceText({
         trigger: /[0-9]$/,
-        matchBefore: /(No.[ ]?)$/,
+        matchBefore: /(No.?)$/,
         replacement: char => `№${char}`
     }),
 
