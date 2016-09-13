@@ -5,7 +5,7 @@
 A “what-you-see-is-what-you-get” editor built on [React][react] and
 [Slate][slate].
 
-### Features
+## Features
 
 - Smart typography utilizes typography ligatures where appropriate and provides
 intuitive shorthand replacements for common symbols and units.
@@ -13,9 +13,7 @@ intuitive shorthand replacements for common symbols and units.
 and toggle formatting.
 - Serializes to semantic HTML5.
 
-### Typography
-
-#### Quotes
+## Quotes
 
 Straight quotes surrounding a piece of text (e.g. "double" or 'single') are
 substituted for their correct [curly quotation marks][quotes].
@@ -25,7 +23,7 @@ substituted for their correct [curly quotation marks][quotes].
 | "Hello world" | “Hello world” |
 | 'Hello world' | ‘Hello world’ |
 
-#### Hyphens
+## Hyphens
 
 Hyphens that occur immediately after a numerical value are substituted for an
 [endash][endash]. Hyphens delimited by spaces are substituted for an
@@ -37,7 +35,7 @@ Hyphens that occur immediately after a numerical value are substituted for an
 | In the range of 10-20. | In the range of 10–20.  |
 | Upon discovering the errors - all 124 of them - the publisher immediately recalled the books. | Upon discovering the errors — all 124 of them — the publisher immediately recalled the books. |
 
-#### Primes
+## Primes
 
 Straight quotes that occur immediately after a numerical value are substituted
 with [primes][primes].
@@ -46,7 +44,7 @@ with [primes][primes].
 |--------|-------|
 | He stood 6'1" tall. | He stood 6′1″ tall. |
 
-#### Punctuation
+## Punctuation
 
 Three consecutive periods are substituted for an ellipsis.
 
@@ -54,7 +52,7 @@ Three consecutive periods are substituted for an ellipsis.
 |--------|-------|
 | A long time ago in a galaxy far, far away... | A long time ago in a galaxy far, far away… |
 
-#### Mathematics
+## Mathematics
 
 When writing mathematical expressions the editor will substitute commonly used
 symbols for their correct replacements. This includes replacing asterisks with
@@ -66,15 +64,15 @@ symbol, as well as supporting fractions, roman numerals, and the numero symbol.
 | 5 * 5 // 5 = 5 | 5 × 5 ÷ 5 = 5 |
 | 5 != 10 | 5 ≠ 10 |
 | 5.1 ~~ 5 | 5.1 ≈ 5 |
-|1 // 1000 = 1%% | 1 ÷ 1000 = 1‰ |
+| 1 // 1000 = 1%% | 1 ÷ 1000 = 1‰ |
 | x >= y | x ≥ y |
 | No.10 | №10 |
 | 1 // 10 = 1/10 | 1 ÷ 10 = ⅒ |
-|roman(1000)roman(1000)roman(10)roman(5)roman(1) | ⅯⅯⅩⅤⅠ |
-|sqrt(4) = 2 | √4 = 2 |
+| roman(1000)roman(1000)roman(10)roman(5)roman(1) | ⅯⅯⅩⅤⅠ |
+| sqrt(4) = 2 | √4 = 2 |
 | 360(deg) = 2(pi) rad | 360° = 2π rad |
 
-#### Currency
+## Currency
 
 Shorthands for currency characters are also available.
 
@@ -84,7 +82,7 @@ Shorthands for currency characters are also available.
 | (yen)  | ¥     |
 | (cent) | ¢     |
 
-#### Symbols
+## Symbols
 
 Various symbols can be inserted with common shorthands, such as (c) for the ©
 symbol.
@@ -102,7 +100,7 @@ symbol.
 | (male)   | ♂     |
 | (female) | ♀     |
 
-#### Keyboard Symbols
+## Keyboard Symbols
 
 Symbol shorthands are also included for common symbols found on a keyboard.
 
