@@ -803,7 +803,7 @@ var plugins = [(0, _slateEditCode2.default)({
 (0, _slateAutoReplaceText2.default)('(c)', '©'), (0, _slateAutoReplaceText2.default)('(r)', '®'), (0, _slateAutoReplaceText2.default)('(tm)', '™'), (0, _slateAutoReplaceText2.default)('<--', '←'), (0, _slateAutoReplaceText2.default)('<..', '⇠'), (0, _slateAutoReplaceText2.default)('-->', '→'), (0, _slateAutoReplaceText2.default)('..>', '⇢'), (0, _slateAutoReplaceText2.default)('^--', '↑'), (0, _slateAutoReplaceText2.default)('<-->', '↔'), (0, _slateAutoReplaceText2.default)('<==', '⇐'), (0, _slateAutoReplaceText2.default)('==>', '⇒'), (0, _slateAutoReplaceText2.default)(':)', '☺'), (0, _slateAutoReplaceText2.default)('<3', '♡'), (0, _slateAutoReplaceText2.default)('(star)', '☆'), (0, _slateAutoReplaceText2.default)('(sect)', '§'), (0, _slateAutoReplaceText2.default)('(spades)', '♠'), (0, _slateAutoReplaceText2.default)('(hearts)', '♥'), (0, _slateAutoReplaceText2.default)('(diamonds)', '♦'), (0, _slateAutoReplaceText2.default)('(clubs)', '♣'), (0, _slateAutoReplaceText2.default)('(paragraph)', '¶'), (0, _slateAutoReplaceText2.default)('(music)', '♪'), (0, _slateAutoReplaceText2.default)('(check)', '✓'), (0, _slateAutoReplaceText2.default)('(cross)', '✗'), (0, _slateAutoReplaceText2.default)('(pencil)', '✎'), (0, _slateAutoReplaceText2.default)('(male)', '♂'), (0, _slateAutoReplaceText2.default)('(female)', '♀'), (0, _slateAutoReplaceText2.default)('(phone)', '☏'), (0, _slateAutoReplaceText2.default)('(tel)', '℡'), (0, _slateAutoReplaceText2.default)('(flag)', '⚐'), (0, _slateAutoReplaceText2.default)('(recycle)', '♺'), (0, _slateAutoReplaceText2.default)('(yinyang)', '☯'), (0, _slateAutoReplaceText2.default)('(peace)', '☮'),
 
 /* math */
-(0, _slateAutoReplaceText2.default)('(infin)', '∞'), (0, _slateAutoReplaceText2.default)('(pi)', 'π'), (0, _slateAutoReplaceText2.default)('(mu)', 'μ'), (0, _slateAutoReplaceText2.default)('(sigma)', 'σ'), (0, _slateAutoReplaceText2.default)('(chi)', 'χ'), (0, _slateAutoReplaceText2.default)('(bar)', '̄'), (0, _slateAutoReplaceText2.default)('(hat)', '̂'), (0, _slateAutoReplaceText2.default)('(deg)', '°'), (0, _slateAutoReplaceText2.default)('==', '≡'), (0, _slateAutoReplaceText2.default)('>=', '≥'), (0, _slateAutoReplaceText2.default)('<=', '≤'), (0, _slateAutoReplaceText2.default)('<<', '«'), (0, _slateAutoReplaceText2.default)('«<', '«'), (0, _slateAutoReplaceText2.default)('>>', '»'), (0, _slateAutoReplaceText2.default)('~=', '≅'), (0, _slateAutoReplaceText2.default)('~~', '≈'), (0, _slateAutoReplaceText2.default)('!=', '≠'), (0, _slateAutoReplaceText2.default)('+-', '±'), (0, _slateAutoReplaceText2.default)('%%', '‰'), (0, _slateAutoReplaceText2.default)('‰%', '‱'), (0, _slateAutoReplaceText2.default)('sqrt(', '√'), (0, _slateAutoReplaceText2.default)('cbrt(', '∛'), (0, _slateAutoReplaceText2.default)('qdrt(', '∜'), (0, _slateAutoReplaceText2.default)('intg(', '∫'), (0, _slateAutoReplaceText2.default)('diff(', '∂'), (0, _slateAutoReplaceText2.default)({
+(0, _slateAutoReplaceText2.default)('(infin)', '∞'), (0, _slateAutoReplaceText2.default)('(pi)', 'π'), (0, _slateAutoReplaceText2.default)('(mu)', 'μ'), (0, _slateAutoReplaceText2.default)('(sigma)', 'σ'), (0, _slateAutoReplaceText2.default)('(chi)', 'χ'), (0, _slateAutoReplaceText2.default)('(bar)', '̄'), (0, _slateAutoReplaceText2.default)('(hat)', '̂'), (0, _slateAutoReplaceText2.default)('(deg)', '°'), (0, _slateAutoReplaceText2.default)('==', '≡'), (0, _slateAutoReplaceText2.default)('>=', '≥'), (0, _slateAutoReplaceText2.default)('<=', '≤'), (0, _slateAutoReplaceText2.default)('<<', '«'), (0, _slateAutoReplaceText2.default)('>>', '»'), (0, _slateAutoReplaceText2.default)('~=', '≅'), (0, _slateAutoReplaceText2.default)('~~', '≈'), (0, _slateAutoReplaceText2.default)('!=', '≠'), (0, _slateAutoReplaceText2.default)('+-', '±'), (0, _slateAutoReplaceText2.default)('%%', '‰'), (0, _slateAutoReplaceText2.default)('‰%', '‱'), (0, _slateAutoReplaceText2.default)('sqrt(', '√'), (0, _slateAutoReplaceText2.default)('cbrt(', '∛'), (0, _slateAutoReplaceText2.default)('qdrt(', '∜'), (0, _slateAutoReplaceText2.default)('intg(', '∫'), (0, _slateAutoReplaceText2.default)('diff(', '∂'), (0, _slateAutoReplaceText2.default)({
     trigger: /\*/,
     matchBefore: /[0-9]$/,
     replacement: '×'
@@ -902,17 +902,21 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.SoftBreak = SoftBreak;
+function splitParagraph(state) {
+    return state.transform().splitBlock().setBlock('paragraph').apply();
+}
+
 function SoftBreak() {
     var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
     return {
         onKeyDown: function onKeyDown(e, data, state) {
-            if (data.key != 'enter') {
+            if (data.key !== 'enter') {
                 return false;
             }
 
-            if (data.isMod) {
-                return state.transform().splitBlock().setBlock('paragraph').apply();
+            if (!data.isShift) {
+                return splitParagraph(state);
             }
 
             var startBlock = state.startBlock;
@@ -920,11 +924,11 @@ function SoftBreak() {
 
 
             if (options.onlyIn && !options.onlyIn.includes(type)) {
-                return false;
+                return splitParagraph(state);
             }
 
             if (options.ignoreIn && options.ignoreIn.includes(type)) {
-                return false;
+                return splitParagraph(state);
             }
 
             return state.transform().insertText('\n').apply();
@@ -5297,7 +5301,7 @@ module.exports={
         "spec": ">=0.20.0 <0.21.0",
         "type": "range"
       },
-      "C:\\Users\\michaelbu\\git\\personal_repos\\wysiwyg-editor\\node_modules\\slate"
+      "/home/michael/Programming/wysiwyg-editor/node_modules/slate"
     ]
   ],
   "_from": "cheerio@>=0.20.0 <0.21.0",
@@ -5328,7 +5332,7 @@ module.exports={
   "_shasum": "5c710f2bab95653272842ba01c6ea61b3545ec35",
   "_shrinkwrap": null,
   "_spec": "cheerio@^0.20.0",
-  "_where": "C:\\Users\\michaelbu\\git\\personal_repos\\wysiwyg-editor\\node_modules\\slate",
+  "_where": "/home/michael/Programming/wysiwyg-editor/node_modules/slate",
   "author": {
     "name": "Matt Mueller",
     "email": "mattmuelle@gmail.com",

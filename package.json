@@ -12,6 +12,7 @@
     "build:css": "node-sass --output-style expanded --importer node_modules/node-sass-import style/index.scss dist/editor.css",
     "watch:css": "nodemon --ext scss --watch style --exec \"npm run build:css\"",
     "dist:css": "postcss --use cssnano --no-cssnano.autoprefixer --output dist/editor.min.css dist/editor.css",
+    "browser-sync": "browser-sync start --server --index dev.html --files dist",
     "watch": "concurrently --kill-others \"npm run watch:js\" \"npm run watch:css\"",
     "build": "npm run clean && npm run build:js && npm run build:css",
     "dist": "npm run clean && npm run build && npm run dist:js && npm run dist:css"
@@ -30,12 +31,13 @@
     "babel-preset-react": "6.11.1",
     "babel-preset-stage-0": "6.5.0",
     "babelify": "7.3.0",
+    "browser-sync": "2.15.0",
     "browserify": "13.1.0",
     "concurrently": "2.2.0",
     "cssnano": "3.7.4",
-    "font-awesome": "4.6.3",
     "node-sass": "3.9.3",
     "node-sass-import": "1.0.5",
+    "nodemon": "1.10.2",
     "npm-check-updates": "2.8.0",
     "postcss-cli": "2.6.0",
     "uglify-js": "2.7.3"

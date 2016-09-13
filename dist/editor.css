@@ -12,7 +12,7 @@
   font-family: 'FontAwesome';
   font-weight: 400;
   font-style: normal;
-  src: url("//netdna.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.woff?base64") format("woff");
+  src: url("//netdna.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.woff") format("woff");
 }
 
 .fa-file-pdf-o::before {
