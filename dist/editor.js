@@ -776,35 +776,47 @@ var plugins = [(0, _slateEditCode2.default)({
     }
 }), (0, _SoftBreak.SoftBreak)({
     onlyIn: ['blockquote']
-}), (0, _slateAutoReplaceText2.default)('==', '≡'), (0, _slateAutoReplaceText2.default)('>=', '≥'), (0, _slateAutoReplaceText2.default)('>>', '»'), (0, _slateAutoReplaceText2.default)('<=', '≤'), (0, _slateAutoReplaceText2.default)('<<', '«'), (0, _slateAutoReplaceText2.default)('~=', '≅'), (0, _slateAutoReplaceText2.default)('~~', '≈'), (0, _slateAutoReplaceText2.default)('!=', '≠'), (0, _slateAutoReplaceText2.default)('+-', '±'), (0, _slateAutoReplaceText2.default)('%%', '‰'), (0, _slateAutoReplaceText2.default)('sqrt(', '√'), (0, _slateAutoReplaceText2.default)('cbrt(', '∛'), (0, _slateAutoReplaceText2.default)('qdrt(', '∜'), (0, _slateAutoReplaceText2.default)('intg(', '∫'), (0, _slateAutoReplaceText2.default)('diff(', '∂'), (0, _slateAutoReplaceText2.default)('(~infin)', '∞'), (0, _slateAutoReplaceText2.default)('(~real)', 'ℝ'), (0, _slateAutoReplaceText2.default)('(~complex)', 'ℂ'), (0, _slateAutoReplaceText2.default)('(~natural)', 'ℕ'), (0, _slateAutoReplaceText2.default)('(~prime)', 'ℙ'), (0, _slateAutoReplaceText2.default)('(~rational)', 'ℚ'), (0, _slateAutoReplaceText2.default)('(~integer)', 'ℤ'), (0, _slateAutoReplaceText2.default)('(~forall)', '∀'), (0, _slateAutoReplaceText2.default)('(~complement)', '∁'), (0, _slateAutoReplaceText2.default)('(~exists)', '∃'), (0, _slateAutoReplaceText2.default)('(~notexists)', '∄'), (0, _slateAutoReplaceText2.default)('(~empty)', '∅'), (0, _slateAutoReplaceText2.default)('(~not)', '¬'), (0, _slateAutoReplaceText2.default)('(~and)', '∧'), (0, _slateAutoReplaceText2.default)('(~or)', '∨'), (0, _slateAutoReplaceText2.default)('(~xor)', '⊻'), (0, _slateAutoReplaceText2.default)('(~nand)', '⊼'), (0, _slateAutoReplaceText2.default)('(~nor)', '⊽'), (0, _slateAutoReplaceText2.default)('(~intersect)', '∩'), (0, _slateAutoReplaceText2.default)('(~union)', '∪'), (0, _slateAutoReplaceText2.default)('(~of)', '∈'), (0, _slateAutoReplaceText2.default)('(~notof)', '∉'), (0, _slateAutoReplaceText2.default)('(~contains)', '∋'), (0, _slateAutoReplaceText2.default)('(~notcontains)', '∌'), (0, _slateAutoReplaceText2.default)('(~subset)', '⊂'), (0, _slateAutoReplaceText2.default)('(~notsubset)', '⊄'), (0, _slateAutoReplaceText2.default)('(~superset)', '⊃'), (0, _slateAutoReplaceText2.default)('(~notsuperset)', '⊅'), (0, _slateAutoReplaceText2.default)('(mu)', 'μ'), (0, _slateAutoReplaceText2.default)('(sigma)', 'σ'), (0, _slateAutoReplaceText2.default)('(chi)', 'χ'), (0, _slateAutoReplaceText2.default)('(bar)', '̄'), (0, _slateAutoReplaceText2.default)('(hat)', '̂'), (0, _slateAutoReplaceText2.default)('(deg)', '°'), (0, _slateAutoReplaceText2.default)({
-    trigger: /\*/,
-    matchBefore: /[0-9]$/,
-    replacement: '×'
-}), (0, _slateAutoReplace2.default)({
-    trigger: '/',
-    before: /(\/)$/,
-    transform: function transform(_transform) {
-        return _transform.insertText('÷');
-    }
 }), (0, _slateAutoReplace2.default)({
     trigger: '^',
     before: /[0-9]$/,
-    transform: function transform(_transform2) {
-        return _transform2.toggleMark('superscript');
+    transform: function transform(_transform) {
+        return _transform.toggleMark('superscript');
     }
 }), (0, _slateAutoReplace2.default)({
     trigger: 'enter',
     before: /^(-{3})$/,
-    transform: function transform(_transform3) {
-        return _transform3.setBlock({
+    transform: function transform(_transform2) {
+        return _transform2.setBlock({
             type: 'horizontal-rule',
             isVoid: true
         });
     }
 }),
 
+/* currency */
+(0, _slateAutoReplaceText2.default)('(euro)', '€'), (0, _slateAutoReplaceText2.default)('(yen)', '¥'), (0, _slateAutoReplaceText2.default)('(cent)', '¢'),
+
+/* keyboard */
+(0, _slateAutoReplaceText2.default)('(esc)', '⎋'), (0, _slateAutoReplaceText2.default)('(shift)', '⇧'), (0, _slateAutoReplaceText2.default)('(caps)', '⇪'), (0, _slateAutoReplaceText2.default)('(alt)', '⌥'), (0, _slateAutoReplaceText2.default)('(enter)', '↩'), (0, _slateAutoReplaceText2.default)('(ctrl)', '⌃'), (0, _slateAutoReplaceText2.default)('(cmd)', '⌘'), (0, _slateAutoReplaceText2.default)('(backspace)', '⌫'), (0, _slateAutoReplaceText2.default)('(delete)', '⌦'), (0, _slateAutoReplaceText2.default)('(tab)', '⇥'), (0, _slateAutoReplaceText2.default)('(space)', '␣'), (0, _slateAutoReplaceText2.default)('(home)', '⇱'), (0, _slateAutoReplaceText2.default)('(end)', '⇲'), (0, _slateAutoReplaceText2.default)('(pgup)', '⇞'), (0, _slateAutoReplaceText2.default)('(pgdown)', '⇟'), (0, _slateAutoReplaceText2.default)('(help)', '❓'), (0, _slateAutoReplaceText2.default)('(eject)', '⏏'), (0, _slateAutoReplaceText2.default)('(mail)', '✉'), (0, _slateAutoReplaceText2.default)('(undo)', '↺'), (0, _slateAutoReplaceText2.default)('(redo)', '↻'), (0, _slateAutoReplaceText2.default)('(refresh)', '⟳'), (0, _slateAutoReplaceText2.default)('(cut)', '✂'),
+
 /* symbols */
-(0, _slateAutoReplaceText2.default)('(c)', '©'), (0, _slateAutoReplaceText2.default)('(r)', '®'), (0, _slateAutoReplaceText2.default)('(tm)', '™'), (0, _slateAutoReplaceText2.default)('<--', '←'), (0, _slateAutoReplaceText2.default)('-->', '→'), (0, _slateAutoReplaceText2.default)('<-->', '↔'), (0, _slateAutoReplaceText2.default)('<==', '⇐'), (0, _slateAutoReplaceText2.default)('==>', '⇒'), (0, _slateAutoReplaceText2.default)(':)', '☺'), (0, _slateAutoReplaceText2.default)('<3', '♡'), (0, _slateAutoReplaceText2.default)('(shift)', '⇧'), (0, _slateAutoReplaceText2.default)('(cmd)', '⌘'), (0, _slateAutoReplaceText2.default)('(del)', '⌫'),
+(0, _slateAutoReplaceText2.default)('(c)', '©'), (0, _slateAutoReplaceText2.default)('(r)', '®'), (0, _slateAutoReplaceText2.default)('(tm)', '™'), (0, _slateAutoReplaceText2.default)('<--', '←'), (0, _slateAutoReplaceText2.default)('<..', '⇠'), (0, _slateAutoReplaceText2.default)('-->', '→'), (0, _slateAutoReplaceText2.default)('..>', '⇢'), (0, _slateAutoReplaceText2.default)('^--', '↑'), (0, _slateAutoReplaceText2.default)('<-->', '↔'), (0, _slateAutoReplaceText2.default)('<==', '⇐'), (0, _slateAutoReplaceText2.default)('==>', '⇒'), (0, _slateAutoReplaceText2.default)(':)', '☺'), (0, _slateAutoReplaceText2.default)('<3', '♡'), (0, _slateAutoReplaceText2.default)('(star)', '☆'), (0, _slateAutoReplaceText2.default)('(sect)', '§'), (0, _slateAutoReplaceText2.default)('(spades)', '♠'), (0, _slateAutoReplaceText2.default)('(hearts)', '♥'), (0, _slateAutoReplaceText2.default)('(diamonds)', '♦'), (0, _slateAutoReplaceText2.default)('(clubs)', '♣'), (0, _slateAutoReplaceText2.default)('(paragraph)', '¶'), (0, _slateAutoReplaceText2.default)('(music)', '♪'), (0, _slateAutoReplaceText2.default)('(check)', '✓'), (0, _slateAutoReplaceText2.default)('(cross)', '✗'), (0, _slateAutoReplaceText2.default)('(pencil)', '✎'), (0, _slateAutoReplaceText2.default)('(male)', '♂'), (0, _slateAutoReplaceText2.default)('(female)', '♀'), (0, _slateAutoReplaceText2.default)('(phone)', '☏'), (0, _slateAutoReplaceText2.default)('(tel)', '℡'), (0, _slateAutoReplaceText2.default)('(flag)', '⚐'), (0, _slateAutoReplaceText2.default)('(recycle)', '♺'), (0, _slateAutoReplaceText2.default)('(yinyang)', '☯'), (0, _slateAutoReplaceText2.default)('(peace)', '☮'),
+
+/* math */
+(0, _slateAutoReplaceText2.default)('(infin)', '∞'), (0, _slateAutoReplaceText2.default)('(pi)', 'π'), (0, _slateAutoReplaceText2.default)('(mu)', 'μ'), (0, _slateAutoReplaceText2.default)('(sigma)', 'σ'), (0, _slateAutoReplaceText2.default)('(chi)', 'χ'), (0, _slateAutoReplaceText2.default)('(bar)', '̄'), (0, _slateAutoReplaceText2.default)('(hat)', '̂'), (0, _slateAutoReplaceText2.default)('(deg)', '°'), (0, _slateAutoReplaceText2.default)('==', '≡'), (0, _slateAutoReplaceText2.default)('>=', '≥'), (0, _slateAutoReplaceText2.default)('<=', '≤'), (0, _slateAutoReplaceText2.default)('<<', '«'), (0, _slateAutoReplaceText2.default)('«<', '«'), (0, _slateAutoReplaceText2.default)('>>', '»'), (0, _slateAutoReplaceText2.default)('~=', '≅'), (0, _slateAutoReplaceText2.default)('~~', '≈'), (0, _slateAutoReplaceText2.default)('!=', '≠'), (0, _slateAutoReplaceText2.default)('+-', '±'), (0, _slateAutoReplaceText2.default)('%%', '‰'), (0, _slateAutoReplaceText2.default)('‰%', '‱'), (0, _slateAutoReplaceText2.default)('sqrt(', '√'), (0, _slateAutoReplaceText2.default)('cbrt(', '∛'), (0, _slateAutoReplaceText2.default)('qdrt(', '∜'), (0, _slateAutoReplaceText2.default)('intg(', '∫'), (0, _slateAutoReplaceText2.default)('diff(', '∂'), (0, _slateAutoReplaceText2.default)({
+    trigger: /\*/,
+    matchBefore: /[0-9]$/,
+    replacement: '×'
+}), (0, _slateAutoReplace2.default)({
+    trigger: '/',
+    before: /(\/)$/,
+    transform: function transform(_transform3) {
+        return _transform3.insertText('÷');
+    }
+}),
+
+/* roman numerals */
+(0, _slateAutoReplaceText2.default)('roman(1)', 'Ⅰ'), (0, _slateAutoReplaceText2.default)('roman(2)', 'Ⅱ'), (0, _slateAutoReplaceText2.default)('roman(3)', 'Ⅲ'), (0, _slateAutoReplaceText2.default)('roman(4)', 'Ⅳ'), (0, _slateAutoReplaceText2.default)('roman(5)', 'Ⅴ'), (0, _slateAutoReplaceText2.default)('roman(6)', 'Ⅵ'), (0, _slateAutoReplaceText2.default)('roman(7)', 'Ⅶ'), (0, _slateAutoReplaceText2.default)('roman(8)', 'Ⅷ'), (0, _slateAutoReplaceText2.default)('roman(9)', 'Ⅸ'), (0, _slateAutoReplaceText2.default)('roman(10)', 'Ⅹ'), (0, _slateAutoReplaceText2.default)('roman(11)', 'Ⅺ'), (0, _slateAutoReplaceText2.default)('roman(12)', 'Ⅻ'), (0, _slateAutoReplaceText2.default)('roman(50)', 'Ⅼ'), (0, _slateAutoReplaceText2.default)('roman(100)', 'Ⅽ'), (0, _slateAutoReplaceText2.default)('roman(500)', 'Ⅾ'), (0, _slateAutoReplaceText2.default)('roman(1000)', 'Ⅿ'),
 
 /* prevent double spaces */
 (0, _slateAutoReplaceText2.default)({
@@ -877,7 +889,10 @@ var plugins = [(0, _slateEditCode2.default)({
     replacement: function replacement(char) {
         return '№' + char;
     }
-})];
+}),
+
+/* sets */
+(0, _slateAutoReplaceText2.default)('(~real)', 'ℝ'), (0, _slateAutoReplaceText2.default)('(~complex)', 'ℂ'), (0, _slateAutoReplaceText2.default)('(~natural)', 'ℕ'), (0, _slateAutoReplaceText2.default)('(~prime)', 'ℙ'), (0, _slateAutoReplaceText2.default)('(~rational)', 'ℚ'), (0, _slateAutoReplaceText2.default)('(~integer)', 'ℤ'), (0, _slateAutoReplaceText2.default)('(~forall)', '∀'), (0, _slateAutoReplaceText2.default)('(~complement)', '∁'), (0, _slateAutoReplaceText2.default)('(~exists)', '∃'), (0, _slateAutoReplaceText2.default)('(~notexists)', '∄'), (0, _slateAutoReplaceText2.default)('(~empty)', '∅'), (0, _slateAutoReplaceText2.default)('(~not)', '¬'), (0, _slateAutoReplaceText2.default)('(~and)', '∧'), (0, _slateAutoReplaceText2.default)('(~or)', '∨'), (0, _slateAutoReplaceText2.default)('(~xor)', '⊻'), (0, _slateAutoReplaceText2.default)('(~nand)', '⊼'), (0, _slateAutoReplaceText2.default)('(~nor)', '⊽'), (0, _slateAutoReplaceText2.default)('(~intersect)', '∩'), (0, _slateAutoReplaceText2.default)('(~union)', '∪'), (0, _slateAutoReplaceText2.default)('(~of)', '∈'), (0, _slateAutoReplaceText2.default)('(~notof)', '∉'), (0, _slateAutoReplaceText2.default)('(~contains)', '∋'), (0, _slateAutoReplaceText2.default)('(~notcontains)', '∌'), (0, _slateAutoReplaceText2.default)('(~subset)', '⊂'), (0, _slateAutoReplaceText2.default)('(~notsubset)', '⊄'), (0, _slateAutoReplaceText2.default)('(~superset)', '⊃'), (0, _slateAutoReplaceText2.default)('(~notsuperset)', '⊅')];
 exports.plugins = plugins;
 
 },{"./SoftBreak.jsx":9,"slate-auto-replace":361,"slate-auto-replace-text":360,"slate-edit-code":366}],9:[function(require,module,exports){
