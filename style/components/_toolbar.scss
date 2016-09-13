@@ -1,0 +1,46 @@
+.toolbar-menu-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.toolbar-menu {
+  margin: 0 auto;
+  background-color: $white;
+  padding-top: 10px;
+  width: 700px;
+}
+
+.toolbar-menu-group {
+  display: inline-block;
+  margin-right: 40px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  background-color: $gallery-white;
+}
+
+.toolbar-menu-button {
+  display: inline-block;
+  border-right: 1px solid $alto-white;
+  cursor: pointer;
+  width: 40px;
+  text-align: center;
+  color: $grey;
+
+  i {
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover {
+    color: $dove-grey;
+  }
+
+  &[data-active='true'] {
+    color: $mine-shaft-grey;
+  }
+
+  &:last-child {
+    border: 0;
+  }
+}

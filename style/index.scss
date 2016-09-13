@@ -1,0 +1,18 @@
+// http://sass-guidelin.es/#the-7-1-pattern
+
+// 1. Abstracts
+@import 'abstracts/colors';
+
+// 2. Vendors
+@import 'vendor/font-awesome';
+
+// 3. Base
+
+// 4. Layout
+
+// 5. Components
+@import 'components/editor';
+@import 'components/image';
+@import 'components/toolbar';
+
+// 6. Pages

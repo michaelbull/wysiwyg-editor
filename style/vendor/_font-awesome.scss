@@ -1,0 +1,42 @@
+$font-path: '//netdna.bootstrapcdn.com/font-awesome/4.6.3/fonts';
+
+@import 'font-awesome/scss/variables';
+@import 'font-awesome/scss/mixins';
+@import 'font-awesome/scss/core';
+
+@font-face {
+  font-family: 'FontAwesome';
+  font-weight: 400;
+  font-style: normal;
+  src: url('#{$font-path}/fontawesome-webfont.woff?base64') format('woff');
+}
+
+.#{$fa-css-prefix}-file-pdf-o::before { content: $fa-var-file-pdf-o; }
+.#{$fa-css-prefix}-download::before { content: $fa-var-download; }
+.#{$fa-css-prefix}-angle-up::before { content: $fa-var-angle-up; }
+.#{$fa-css-prefix}-external-link::before { content: $fa-var-external-link; }
+.#{$fa-css-prefix}-copyright::before { content: $fa-var-copyright; }
+.#{$fa-css-prefix}-user::before { content: $fa-var-user; }
+.#{$fa-css-prefix}-at::before { content: $fa-var-at; }
+.#{$fa-css-prefix}-tag::before { content: $fa-var-tag; }
+.#{$fa-css-prefix}-envelope::before { content: $fa-var-envelope; }
+.#{$fa-css-prefix}-warning::before { content: $fa-var-exclamation-triangle; }
+.#{$fa-css-prefix}-bold::before { content: $fa-var-bold; }
+.#{$fa-css-prefix}-italic::before { content: $fa-var-italic; }
+.#{$fa-css-prefix}-underline::before { content: $fa-var-underline; }
+.#{$fa-css-prefix}-header::before { content: $fa-var-header; }
+.#{$fa-css-prefix}-code::before { content: $fa-var-code; }
+.#{$fa-css-prefix}-dollar::before { content: $fa-var-usd; }
+.#{$fa-css-prefix}-quote-left::before { content: $fa-var-quote-left; }
+.#{$fa-css-prefix}-list-ul::before { content: $fa-var-list-ul; }
+.#{$fa-css-prefix}-list-ol::before { content: $fa-var-list-ol; }
+.#{$fa-css-prefix}-strikethrough::before { content: $fa-var-strikethrough; }
+.#{$fa-css-prefix}-superscript::before { content: $fa-var-superscript; }
+.#{$fa-css-prefix}-subscript::before { content: $fa-var-subscript; }
+.#{$fa-css-prefix}-image::before { content: $fa-var-picture-o; }
+.#{$fa-css-prefix}-plus::before { content: $fa-var-plus; }
+.#{$fa-css-prefix}-pencil-square-o::before { content: $fa-var-pencil-square-o; }
+.#{$fa-css-prefix}-keyboard-o::before { content: $fa-var-keyboard-o; }
+.#{$fa-css-prefix}-compress::before { content: $fa-var-compress; }
+.#{$fa-css-prefix}-table::before { content: $fa-var-table; }
+.#{$fa-css-prefix}-columns::before { content: $fa-var-columns; }
