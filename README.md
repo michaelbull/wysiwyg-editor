@@ -30,7 +30,7 @@ substituted for their correct [curly quotation marks][quotes].
 Hyphens that occur immediately after a numerical value are substituted for an
 [endash][endash]. Hyphens delimited by spaces are substituted for an
 [emdash][emdash], with the spaces being substituted for
-[hair spaces][hairspaces].
+[hair spaces][hairspace].
 
 | Before | After |
 |--------|-------|
