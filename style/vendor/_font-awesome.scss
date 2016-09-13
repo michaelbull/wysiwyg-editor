@@ -8,7 +8,7 @@ $font-path: '//netdna.bootstrapcdn.com/font-awesome/4.6.3/fonts';
   font-family: 'FontAwesome';
   font-weight: 400;
   font-style: normal;
-  src: url('#{$font-path}/fontawesome-webfont.woff?base64') format('woff');
+  src: url('#{$font-path}/fontawesome-webfont.woff') format('woff');
 }
 
 .#{$fa-css-prefix}-file-pdf-o::before { content: $fa-var-file-pdf-o; }
