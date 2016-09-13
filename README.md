@@ -2,7 +2,7 @@
 
 # wysiwyg-editor
 
-A “what-you-see-is-what-you-get” editor built using [React][react] and
+A “what-you-see-is-what-you-get” editor built on [React][react] and
 [Slate][slate].
 
 ### Features
