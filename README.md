@@ -7,11 +7,13 @@ A “what-you-see-is-what-you-get” editor built on [React][react] &
 
 ## Features
 
-- Smart typography utilizes typography ligatures where appropriate and provides
-intuitive shorthand replacements for common symbols and units.
+- Smart typography utilizes [typographic ligatures][ligature] where appropriate
+and provides intuitive shorthand replacements for common symbols and units.
 - The floating rich editor menu allows for easy document edits to insert blocks
 and toggle formatting.
-- Serializes to semantic HTML5.
+- The document state is saved to your browser’s local storage, allowing you to
+return to your document later on. Once finished, the document may be serialized
+and downloaded as a semantic HTML5 file.
 
 ## Quotes
 
@@ -116,6 +118,7 @@ Symbol shorthands are also included for common symbols found on a keyboard.
 
 [logo]: logo.png
 [react]: https://facebook.github.io/react/
+[ligature]: https://en.wikipedia.org/wiki/Typographic_ligature
 [slate]: https://github.com/ianstormtaylor/slate
 [endash]: http://www.thepunctuationguide.com/en-dash.html
 [emdash]: http://www.thepunctuationguide.com/em-dash.html
