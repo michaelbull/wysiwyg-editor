@@ -11,9 +11,9 @@ A “what-you-see-is-what-you-get” editor built on [React][react] &
 and provides intuitive shorthand replacements for common symbols and units.
 - The floating rich editor menu allows for easy document edits to insert blocks
 and toggle formatting.
-- The document state is saved to your browser’s local storage, allowing you to
-return to your document later on. Once finished, the document may be serialized
-and downloaded as a semantic HTML5 file.
+- A persistent document state is saved to the browser’s local storage, allowing
+document edits to continue across sessions. Once finished, the document may be
+serialized and downloaded as a semantic HTML5 file.
 
 ## Quotes
 
