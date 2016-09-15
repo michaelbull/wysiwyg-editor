@@ -5301,7 +5301,7 @@ module.exports={
         "spec": ">=0.20.0 <0.21.0",
         "type": "range"
       },
-      "/home/michael/Programming/wysiwyg-editor/node_modules/slate"
+      "C:\\Users\\michaelbu\\git\\personal_repos\\wysiwyg-editor\\node_modules\\slate"
     ]
   ],
   "_from": "cheerio@>=0.20.0 <0.21.0",
@@ -5332,7 +5332,7 @@ module.exports={
   "_shasum": "5c710f2bab95653272842ba01c6ea61b3545ec35",
   "_shrinkwrap": null,
   "_spec": "cheerio@^0.20.0",
-  "_where": "/home/michael/Programming/wysiwyg-editor/node_modules/slate",
+  "_where": "C:\\Users\\michaelbu\\git\\personal_repos\\wysiwyg-editor\\node_modules\\slate",
   "author": {
     "name": "Matt Mueller",
     "email": "mattmuelle@gmail.com",
