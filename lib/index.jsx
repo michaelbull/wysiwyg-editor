@@ -131,18 +131,18 @@ export class App extends React.Component {
                         {this.renderImageButton()}
                     </span>
                     <span className="toolbar-menu-group">
-                        {this.renderMarkButton('strong', 'fa fa-bold', 'Strong')}
-                        {this.renderMarkButton('emphasis', 'fa fa-italic', 'Emphasis')}
-                        {this.renderMarkButton('insert', 'fa fa-underline', 'Inserted')}
-                        {this.renderMarkButton('delete', 'fa fa-strikethrough', 'Deleted')}
+                        {this.renderMarkButton('strong', 'fa fa-bold', 'Strong <ctrl+b>')}
+                        {this.renderMarkButton('emphasis', 'fa fa-italic', 'Emphasis <ctrl+i>')}
+                        {this.renderMarkButton('insert', 'fa fa-underline', 'Inserted <ctrl+u>')}
+                        {this.renderMarkButton('delete', 'fa fa-strikethrough', 'Deleted <ctrl+s>')}
                         {this.renderMarkButton('superscript', 'fa fa-superscript', 'Superscript')}
                         {this.renderMarkButton('subscript', 'fa fa-subscript', 'Subscript')}
                         {this.renderMarkButton('cite', 'fa fa-plus', 'Cite')}
-                        {this.renderMarkButton('quote', 'fa fa-quote-left', 'Quote')}
-                        {this.renderMarkButton('mark', 'fa fa-pencil-square-o', 'Mark')}
+                        {this.renderMarkButton('quote', 'fa fa-quote-left', 'Quote <ctrl+q>')}
+                        {this.renderMarkButton('mark', 'fa fa-pencil-square-o', 'Mark <ctrl+m>')}
                         {this.renderMarkButton('variable', 'fa fa-dollar', 'Variable')}
-                        {this.renderMarkButton('code', 'fa fa-code', 'Code')}
-                        {this.renderMarkButton('keyboard', 'fa fa-keyboard-o', 'Keyboard')}
+                        {this.renderMarkButton('code', 'fa fa-code', 'Code <ctrl+`>')}
+                        {this.renderMarkButton('keyboard', 'fa fa-keyboard-o', 'Keyboard <ctrl+k>')}
                         {this.renderMarkButton('small', 'fa fa-compress', 'Small')}
                     </span>
                     <span className="toolbar-menu-group">
