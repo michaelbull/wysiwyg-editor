@@ -59,7 +59,8 @@ Three consecutive periods are substituted for an ellipsis.
 When writing mathematical expressions the editor will substitute commonly used
 symbols for their correct replacements. This includes replacing asterisks with
 the multiplication symbol and consecutive forward slashes with the division
-symbol, as well as supporting fractions, roman numerals, and the numero symbol.
+symbol, as well as supporting fractions, roman numerals, and the
+[numero][numero] symbol.
 
 | Before | After |
 |:-------|:-----:|
@@ -70,9 +71,20 @@ symbol, as well as supporting fractions, roman numerals, and the numero symbol.
 | x >= y | x ≥ y |
 | No.10 | №10 |
 | 1 // 10 = 1/10 | 1 ÷ 10 = ⅒ |
-| roman(1000)roman(1000)roman(10)roman(5)roman(1) | ⅯⅯⅩⅤⅠ |
 | sqrt(4) = 2 | √4 = 2 |
 | 360(deg) = 2(pi) rad | 360° = 2π rad |
+
+## Roman Numerals
+
+The editor can automatically replace decimal number inputs with the equivalent
+in [roman numerals][roman].
+
+| Before | After |
+|:-------|:-----:|
+| roman(2016) | ⅯⅯⅩⅤⅠ |
+| roman(22) | ⅩⅩⅡ |
+| roman(87) | ⅬⅩⅩⅩⅦ |
+| roman(808) | ⅮⅭⅭⅭⅧ |
 
 ## Currency
 
@@ -126,3 +138,5 @@ Symbol shorthands are also included for common symbols found on a keyboard.
 [quotes]: http://practicaltypography.com/straight-and-curly-quotes.html
 [replacements]: https://github.com/MikeBull94/wysiwyg-editor/blob/master/lib/plugins/Plugins.jsx#L6
 [primes]: https://mixcreative.wordpress.com/2010/01/30/apostrophe-or-prime/
+[numero]: https://en.wikipedia.org/wiki/Numero_sign
+[roman]: https://en.wikipedia.org/wiki/Roman_numerals

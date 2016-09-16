@@ -2,6 +2,7 @@ import EditCode from 'slate-edit-code';
 import Replace from 'slate-auto-replace';
 import ReplaceText from 'slate-auto-replace-text';
 import { SoftBreak } from './SoftBreak.jsx';
+import { toRoman } from './RomanNumerals.jsx';
 
 export const plugins = [
     EditCode({
@@ -128,22 +129,15 @@ export const plugins = [
     }),
 
     /* roman numerals */
-    ReplaceText('roman(1)', 'Ⅰ'),
-    ReplaceText('roman(2)', 'Ⅱ'),
-    ReplaceText('roman(3)', 'Ⅲ'),
-    ReplaceText('roman(4)', 'Ⅳ'),
-    ReplaceText('roman(5)', 'Ⅴ'),
-    ReplaceText('roman(6)', 'Ⅵ'),
-    ReplaceText('roman(7)', 'Ⅶ'),
-    ReplaceText('roman(8)', 'Ⅷ'),
-    ReplaceText('roman(9)', 'Ⅸ'),
-    ReplaceText('roman(10)', 'Ⅹ'),
-    ReplaceText('roman(11)', 'Ⅺ'),
-    ReplaceText('roman(12)', 'Ⅻ'),
-    ReplaceText('roman(50)', 'Ⅼ'),
-    ReplaceText('roman(100)', 'Ⅽ'),
-    ReplaceText('roman(500)', 'Ⅾ'),
-    ReplaceText('roman(1000)', 'Ⅿ'),
+    Replace({
+        trigger: ')',
+        before: /(roman\(([0-9]+))$/,
+        transform: (transform, e, data, matches) => {
+            const decimal = matches.before[2];
+            const roman = toRoman(decimal);
+            return transform.insertText(roman);
+        }
+    }),
 
     /* prevent double spaces */
     ReplaceText({
