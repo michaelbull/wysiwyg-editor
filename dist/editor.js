@@ -953,7 +953,7 @@ var plugins = [(0, _slateEditCode2.default)({
 /* double quotes */
 (0, _slateAutoReplaceText2.default)({
     trigger: '"',
-    matchBefore: /[a-zA-Z, ]$/,
+    matchBefore: /[a-zA-Z,]$/,
     replacement: '”'
 }), (0, _slateAutoReplaceText2.default)({
     trigger: /^[a-zA-Z0-9]$/,
@@ -966,7 +966,7 @@ var plugins = [(0, _slateEditCode2.default)({
 /* single quotes */
 (0, _slateAutoReplaceText2.default)({
     trigger: '\'',
-    matchBefore: /[a-zA-Z, ]$/,
+    matchBefore: /[a-zA-Z,]$/,
     replacement: '’'
 }), (0, _slateAutoReplaceText2.default)({
     trigger: /^[a-zA-Z0-9]$/,
@@ -976,7 +976,7 @@ var plugins = [(0, _slateEditCode2.default)({
     }
 }),
 
-/* primes **/
+/* primes */
 (0, _slateAutoReplaceText2.default)({
     trigger: '"',
     matchBefore: /[0-9]$/,
@@ -5447,7 +5447,7 @@ module.exports={
         "spec": ">=0.20.0 <0.21.0",
         "type": "range"
       },
-      "C:\\Users\\michaelbu\\git\\personal_repos\\wysiwyg-editor\\node_modules\\slate"
+      "/home/michael/Programming/wysiwyg-editor/node_modules/slate"
     ]
   ],
   "_from": "cheerio@>=0.20.0 <0.21.0",
@@ -5478,7 +5478,7 @@ module.exports={
   "_shasum": "5c710f2bab95653272842ba01c6ea61b3545ec35",
   "_shrinkwrap": null,
   "_spec": "cheerio@^0.20.0",
-  "_where": "C:\\Users\\michaelbu\\git\\personal_repos\\wysiwyg-editor\\node_modules\\slate",
+  "_where": "/home/michael/Programming/wysiwyg-editor/node_modules/slate",
   "author": {
     "name": "Matt Mueller",
     "email": "mattmuelle@gmail.com",
