@@ -199,7 +199,7 @@ export const plugins = [
     /* double quotes */
     ReplaceText({
         trigger: '"',
-        matchBefore: /[a-zA-Z, ]$/,
+        matchBefore: /[a-zA-Z,]$/,
         replacement: '”'
     }),
     ReplaceText({
@@ -211,7 +211,7 @@ export const plugins = [
     /* single quotes */
     ReplaceText({
         trigger: '\'',
-        matchBefore: /[a-zA-Z, ]$/,
+        matchBefore: /[a-zA-Z,]$/,
         replacement: '’'
     }),
     ReplaceText({
@@ -220,7 +220,7 @@ export const plugins = [
         replacement: char => `‘${char}`
     }),
 
-    /* primes **/
+    /* primes */
     ReplaceText({
         trigger: '"',
         matchBefore: /[0-9]$/,
