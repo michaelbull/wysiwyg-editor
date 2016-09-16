@@ -126,8 +126,8 @@ export class App extends React.Component {
                     <span className="toolbar-menu-group">
                         {this.renderBlockButton('preformatted', 'fa fa-code', 'Pre-formatted')}
                         {this.renderBlockButton('blockquote', 'fa fa-quote-left', 'Blockquote')}
-                        {this.renderBlockButton('bulleted-list', 'fa fa-list-ul', 'Bulleted list')}
-                        {this.renderBlockButton('numbered-list', 'fa fa-list-ol', 'Numbered list')}
+                        {this.renderBlockButton('unordered-list', 'fa fa-list-ul', 'Unordered list')}
+                        {this.renderBlockButton('ordered-list', 'fa fa-list-ol', 'Ordered list')}
                         {this.renderImageButton()}
                     </span>
                     <span className="toolbar-menu-group">
@@ -205,15 +205,15 @@ export class App extends React.Component {
         let transform = state.transform();
         const { document } = state;
 
-        if (type !== 'bulleted-list' && type !== 'numbered-list') {
+        if (type !== 'ordered-list' && type !== 'unordered-list') {
             const isActive = this.hasBlock(type);
             const isList = this.hasBlock('list-item');
 
             if (isList) {
                 transform = transform
                     .setBlock(isActive ? DEFAULT_NODE : type)
-                    .unwrapBlock('bulleted-list')
-                    .unwrapBlock('numbered-list');
+                    .unwrapBlock('ordered-list')
+                    .unwrapBlock('unordered-list');
             } else {
                 transform = transform
                     .setBlock(isActive ? DEFAULT_NODE : type);
@@ -227,11 +227,11 @@ export class App extends React.Component {
             if (isList && isType) {
                 transform = transform
                     .setBlock(DEFAULT_NODE)
-                    .unwrapBlock('bulleted-list')
-                    .unwrapBlock('numbered-list');
+                    .unwrapBlock('ordered-list')
+                    .unwrapBlock('unordered-list');
             } else if (isList) {
                 transform = transform
-                    .unwrapBlock(type === 'bulleted-list' ? 'numbered-list' : 'bulleted-list')
+                    .unwrapBlock(type === 'ordered-list' ? 'unordered-list' : 'ordered-list')
                     .wrapBlock(type);
             } else {
                 transform = transform

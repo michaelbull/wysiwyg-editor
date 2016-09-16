@@ -116,13 +116,13 @@ var block = exports.block = {
                     null,
                     children
                 );
-            case 'bulleted-list':
+            case 'unordered-list':
                 return _react2.default.createElement(
                     'ul',
                     null,
                     children
                 );
-            case 'numbered-list':
+            case 'ordered-list':
                 return _react2.default.createElement(
                     'ol',
                     null,
@@ -523,8 +523,8 @@ var App = exports.App = function (_React$Component) {
                         { className: 'toolbar-menu-group' },
                         _this.renderBlockButton('preformatted', 'fa fa-code', 'Pre-formatted'),
                         _this.renderBlockButton('blockquote', 'fa fa-quote-left', 'Blockquote'),
-                        _this.renderBlockButton('bulleted-list', 'fa fa-list-ul', 'Bulleted list'),
-                        _this.renderBlockButton('numbered-list', 'fa fa-list-ol', 'Numbered list'),
+                        _this.renderBlockButton('unordered-list', 'fa fa-list-ul', 'Unordered list'),
+                        _this.renderBlockButton('ordered-list', 'fa fa-list-ol', 'Ordered list'),
                         _this.renderImageButton()
                     ),
                     _react2.default.createElement(
@@ -596,12 +596,12 @@ var App = exports.App = function (_React$Component) {
             var document = _state.document;
 
 
-            if (type !== 'bulleted-list' && type !== 'numbered-list') {
+            if (type !== 'ordered-list' && type !== 'unordered-list') {
                 var isActive = _this.hasBlock(type);
                 var isList = _this.hasBlock('list-item');
 
                 if (isList) {
-                    transform = transform.setBlock(isActive ? DEFAULT_NODE : type).unwrapBlock('bulleted-list').unwrapBlock('numbered-list');
+                    transform = transform.setBlock(isActive ? DEFAULT_NODE : type).unwrapBlock('ordered-list').unwrapBlock('unordered-list');
                 } else {
                     transform = transform.setBlock(isActive ? DEFAULT_NODE : type);
                 }
@@ -614,9 +614,9 @@ var App = exports.App = function (_React$Component) {
                 });
 
                 if (_isList && isType) {
-                    transform = transform.setBlock(DEFAULT_NODE).unwrapBlock('bulleted-list').unwrapBlock('numbered-list');
+                    transform = transform.setBlock(DEFAULT_NODE).unwrapBlock('ordered-list').unwrapBlock('unordered-list');
                 } else if (_isList) {
-                    transform = transform.unwrapBlock(type === 'bulleted-list' ? 'numbered-list' : 'bulleted-list').wrapBlock(type);
+                    transform = transform.unwrapBlock(type === 'ordered-list' ? 'unordered-list' : 'ordered-list').wrapBlock(type);
                 } else {
                     transform = transform.setBlock('list-item').wrapBlock(type);
                 }
@@ -790,10 +790,28 @@ var plugins = [(0, _slateEditCode2.default)({
         return _transform.toggleMark('superscript');
     }
 }), (0, _slateAutoReplace2.default)({
-    trigger: 'enter',
-    before: /^(-{3})$/,
+    trigger: 'space',
+    before: /^(>)$/,
     transform: function transform(_transform2) {
-        return _transform2.setBlock({
+        return _transform2.setBlock('blockquote');
+    }
+}), (0, _slateAutoReplace2.default)({
+    trigger: 'space',
+    before: /^(-)$/,
+    transform: function transform(_transform3) {
+        return _transform3.setBlock('list-item').wrapBlock('unordered-list');
+    }
+}), (0, _slateAutoReplace2.default)({
+    trigger: 'space',
+    before: /^(1\.)$/,
+    transform: function transform(_transform4) {
+        return _transform4.setBlock('list-item').wrapBlock('ordered-list');
+    }
+}), (0, _slateAutoReplace2.default)({
+    trigger: '-',
+    before: /^( — )$/,
+    transform: function transform(_transform5) {
+        return _transform5.setBlock({
             type: 'horizontal-rule',
             isVoid: true
         });
@@ -817,8 +835,8 @@ var plugins = [(0, _slateEditCode2.default)({
 }), (0, _slateAutoReplace2.default)({
     trigger: '/',
     before: /(\/)$/,
-    transform: function transform(_transform3) {
-        return _transform3.insertText('÷');
+    transform: function transform(_transform6) {
+        return _transform6.insertText('÷');
     }
 }),
 
@@ -826,10 +844,10 @@ var plugins = [(0, _slateEditCode2.default)({
 (0, _slateAutoReplace2.default)({
     trigger: ')',
     before: /(roman\(([0-9]+))$/,
-    transform: function transform(_transform4, e, data, matches) {
+    transform: function transform(_transform7, e, data, matches) {
         var decimal = matches.before[2];
         var roman = (0, _RomanNumerals.toRoman)(decimal);
-        return _transform4.insertText(roman);
+        return _transform7.insertText(roman);
     }
 }),
 
@@ -1132,14 +1150,14 @@ var nodes = exports.nodes = {
             props.children
         );
     },
-    'bulleted-list': function bulletedList(props) {
+    'unordered-list': function unorderedList(props) {
         return _react2.default.createElement(
             'ul',
             props.attributes,
             props.children
         );
     },
-    'numbered-list': function numberedList(props) {
+    'ordered-list': function orderedList(props) {
         return _react2.default.createElement(
             'ol',
             props.attributes,
@@ -1241,8 +1259,8 @@ var BLOCK_TAGS = exports.BLOCK_TAGS = {
     blockquote: 'blockquote',
     hr: 'horizontal-rule',
     pre: 'preformatted',
-    ul: 'bulleted-list',
-    ol: 'numbered-list',
+    ul: 'unordered-list',
+    ol: 'ordered-list',
     li: 'list-item',
     h1: 'heading-one',
     h2: 'heading-two',

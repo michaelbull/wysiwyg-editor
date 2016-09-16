@@ -19,8 +19,23 @@ export const plugins = [
         transform: transform => transform.toggleMark('superscript')
     }),
     Replace({
-        trigger: 'enter',
-        before: /^(-{3})$/,
+        trigger: 'space',
+        before: /^(>)$/,
+        transform: transform => transform.setBlock('blockquote')
+    }),
+    Replace({
+        trigger: 'space',
+        before: /^(-)$/,
+        transform: transform => transform.setBlock('list-item').wrapBlock('unordered-list')
+    }),
+    Replace({
+        trigger: 'space',
+        before: /^(1\.)$/,
+        transform: transform => transform.setBlock('list-item').wrapBlock('ordered-list')
+    }),
+    Replace({
+        trigger: '-',
+        before: /^( — )$/,
         transform: transform => transform.setBlock({
             type: 'horizontal-rule',
             isVoid: true

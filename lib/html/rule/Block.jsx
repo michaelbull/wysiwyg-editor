@@ -19,9 +19,9 @@ export const block = {
                 return <hr />;
             case 'preformatted':
                 return <pre>{children}</pre>;
-            case 'bulleted-list':
+            case 'unordered-list':
                 return <ul>{children}</ul>;
-            case 'numbered-list':
+            case 'ordered-list':
                 return <ol>{children}</ol>;
             case 'list-item':
                 return <li>{children}</li>;
