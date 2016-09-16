@@ -4,7 +4,8 @@ export const image = {
     serialize(node, children) {
         if (node.kind === 'block' && node.type === 'image') {
             const src = node.data.get('src');
-            return <img src={src} />;
+            const alt = node.data.get('alt');
+            return <img src={src} alt={alt} />;
         }
     },
 

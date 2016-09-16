@@ -205,7 +205,8 @@ var image = exports.image = {
     serialize: function serialize(node, children) {
         if (node.kind === 'block' && node.type === 'image') {
             var src = node.data.get('src');
-            return _react2.default.createElement('img', { src: src });
+            var alt = node.data.get('alt');
+            return _react2.default.createElement('img', { src: src, alt: alt });
         }
     },
     deserialize: function deserialize(element, next) {
@@ -678,20 +679,24 @@ var App = exports.App = function (_React$Component) {
             );
         }, _this.imageDialog = function () {
             var src = window.prompt('Enter the URL of the image:');
+            var alt = window.prompt('Enter the alt text of the image:');
 
-            if (!src) {
+            if (!src || !alt) {
                 return;
             }
 
             var state = _this.state.state;
 
-            state = _this.insertImage(state, src);
+            state = _this.insertImage(state, src, alt);
             _this.onChange(state);
-        }, _this.insertImage = function (state, src) {
+        }, _this.insertImage = function (state, src, alt) {
             return state.transform().insertBlock({
                 type: 'image',
                 isVoid: true,
-                data: { src: src }
+                data: {
+                    src: src,
+                    alt: alt
+                }
             }).apply();
         }, _this.renderDownloadButton = function () {
             var onMouseDown = function onMouseDown(e) {
@@ -1161,8 +1166,9 @@ var nodes = exports.nodes = {
 
         var isFocused = state.selection.hasEdgeIn(node);
         var src = node.data.get('src');
-        var className = isFocused ? 'focused' : null;
-        return _react2.default.createElement('img', _extends({ src: src, className: className }, props.attributes));
+        var alt = node.data.get('alt');
+        var className = isFocused ? 'focused' : undefined;
+        return _react2.default.createElement('img', _extends({ src: src, className: className, alt: alt }, props.attributes));
     }
 };
 

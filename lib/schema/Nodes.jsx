@@ -19,9 +19,10 @@ export const nodes = {
         const { node, state } = props;
         const isFocused = state.selection.hasEdgeIn(node);
         const src = node.data.get('src');
-        const className = isFocused ? 'focused' : null;
+        const alt = node.data.get('alt');
+        const className = isFocused ? 'focused' : undefined;
         return (
-            <img src={src} className={className} {...props.attributes} />
+            <img src={src} className={className} alt={alt} {...props.attributes} />
         )
     }
 };

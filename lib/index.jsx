@@ -290,23 +290,27 @@ export class App extends React.Component {
 
     imageDialog = () => {
         const src = window.prompt('Enter the URL of the image:');
+        const alt = window.prompt('Enter the alt text of the image:');
 
-        if (!src) {
+        if (!src || !alt) {
             return;
         }
 
         let { state } = this.state;
-        state = this.insertImage(state, src);
+        state = this.insertImage(state, src, alt);
         this.onChange(state);
     };
 
-    insertImage = (state, src) => {
+    insertImage = (state, src, alt) => {
         return state
             .transform()
             .insertBlock({
                 type: 'image',
                 isVoid: true,
-                data: { src }
+                data: {
+                    src: src,
+                    alt: alt
+                }
             })
             .apply();
     };
