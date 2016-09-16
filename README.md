@@ -17,7 +17,7 @@ serialized and downloaded as a semantic HTML5 file.
 
 ## Quotes
 
-Straight quotes surrounding a piece of text (e.g. "double" or 'single') are
+Straight quotes surrounding a piece of text (e.g. 'single' or "double") are
 substituted for their correct [curly quotation marks][quotes].
 
 | Before        | After         |
