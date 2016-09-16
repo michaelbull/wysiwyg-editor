@@ -40,7 +40,7 @@ export const mark = {
     deserialize(element, next) {
         const type = MARK_TAGS[element.tagName];
 
-        if (!type) {
+        if (!type || type === 'abbreviation') {
             return;
         }
 

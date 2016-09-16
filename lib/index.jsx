@@ -144,6 +144,7 @@ export class App extends React.Component {
                         {this.renderMarkButton('code', 'fa fa-code', 'Code <ctrl+`>')}
                         {this.renderMarkButton('keyboard', 'fa fa-keyboard-o', 'Keyboard <ctrl+k>')}
                         {this.renderMarkButton('small', 'fa fa-compress', 'Small')}
+                        {this.renderAbbreviationButton()}
                     </span>
                     <span className="toolbar-menu-group">
                         {this.renderDownloadButton()}
@@ -331,6 +332,45 @@ export class App extends React.Component {
         download.setAttribute('href', 'data:text/text;charset=utf-8,' + encodeURI(data));
         download.setAttribute('download', 'index.html');
         download.click();
+    };
+
+    renderAbbreviationButton = () => {
+        const isActive = this.hasMark('abbreviation');
+        const onMouseDown = e => this.insertAbbreviation();
+
+        return (
+            <span className="toolbar-menu-button" title="Abbreviation" onMouseDown={onMouseDown} data-active={isActive}>
+                <small>ABC</small>
+            </span>
+        );
+    };
+
+    insertAbbreviation = () => {
+        let { state } = this.state;
+
+        if (this.hasMark('abbreviation')) {
+            state = state
+                .transform()
+                .removeMark('abbreviation')
+                .apply();
+
+            this.onChange(state);
+            return;
+        }
+
+        const title = window.prompt('Enter the abbreviation:');
+
+        state = state
+            .transform()
+            .toggleMark({
+                type: 'abbreviation',
+                data: {
+                    title: title
+                }
+            })
+            .apply();
+
+        this.onChange(state);
     };
 }
 
