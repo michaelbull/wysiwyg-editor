@@ -7,7 +7,7 @@
     "check-updates": "ncu",
     "update-dependencies": "ncu --upgrade && npm install",
     "build:js": "browserify ./lib/index.jsx -o ./dist/editor.js -t [ babelify --presets [ es2015 react stage-0 ] ]",
-    "watch:js": "nodemon --ext jsx,jsx --watch lib --exec \"npm run build:js\"",
+    "watch:js": "nodemon --ext jsx --watch lib --exec \"npm run build:js\"",
     "dist:js": "uglifyjs dist/editor.js --comments --compress --mangle --output dist/editor.min.js",
     "build:css": "node-sass --output-style expanded --importer node_modules/node-sass-import style/index.scss dist/editor.css",
     "watch:css": "nodemon --ext scss --watch style --exec \"npm run build:css\"",
