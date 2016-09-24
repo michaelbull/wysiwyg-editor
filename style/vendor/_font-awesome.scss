@@ -1,8 +1,8 @@
 $font-path: '//netdna.bootstrapcdn.com/font-awesome/4.6.3/fonts';
 
-@import 'font-awesome/scss/variables';
-@import 'font-awesome/scss/mixins';
-@import 'font-awesome/scss/core';
+@import '~font-awesome/scss/variables';
+@import '~font-awesome/scss/mixins';
+@import '~font-awesome/scss/core';
 
 @font-face {
   font-family: 'FontAwesome';
