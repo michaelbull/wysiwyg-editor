@@ -14,6 +14,12 @@ export const marks = {
     'variable': props => <var {...props.attributes}>{props.children}</var>,
     'keyboard': props => <kbd {...props.attributes}>{props.children}</kbd>,
     'small': props => <small {...props.attributes}>{props.children}</small>,
+    'link': (props) => {
+        const href = props.mark.data.get('href');
+        return (
+            <a href={href} {...props.attributes}>{props.children}</a>
+        )
+    },
     'abbreviation': (props) => {
         const title = props.mark.data.get('title');
         return (

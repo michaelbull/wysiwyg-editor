@@ -12,5 +12,6 @@ export const MARK_TAGS = {
     var: 'variable',
     kbd: 'keyboard',
     small: 'small',
-    abbr: 'abbreviation'
+    abbr: 'abbreviation',
+    a: 'link',
 };

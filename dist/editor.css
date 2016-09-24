@@ -15,44 +15,8 @@
   src: url("//netdna.bootstrapcdn.com/font-awesome/4.6.3/fonts/fontawesome-webfont.woff") format("woff");
 }
 
-.fa-file-pdf-o::before {
-  content: "";
-}
-
-.fa-download::before {
-  content: "";
-}
-
-.fa-angle-up::before {
-  content: "";
-}
-
-.fa-external-link::before {
-  content: "";
-}
-
-.fa-copyright::before {
-  content: "";
-}
-
-.fa-user::before {
-  content: "";
-}
-
-.fa-at::before {
-  content: "";
-}
-
-.fa-tag::before {
-  content: "";
-}
-
-.fa-envelope::before {
-  content: "";
-}
-
-.fa-warning::before {
-  content: "";
+.fa-header::before {
+  content: "";
 }
 
 .fa-bold::before {
@@ -67,30 +31,6 @@
   content: "";
 }
 
-.fa-header::before {
-  content: "";
-}
-
-.fa-code::before {
-  content: "";
-}
-
-.fa-dollar::before {
-  content: "";
-}
-
-.fa-quote-left::before {
-  content: "";
-}
-
-.fa-list-ul::before {
-  content: "";
-}
-
-.fa-list-ol::before {
-  content: "";
-}
-
 .fa-strikethrough::before {
   content: "";
 }
@@ -103,16 +43,24 @@
   content: "";
 }
 
-.fa-image::before {
-  content: "";
-}
-
 .fa-plus::before {
   content: "";
 }
 
+.fa-quote-left::before {
+  content: "";
+}
+
 .fa-pencil-square-o::before {
   content: "";
+}
+
+.fa-dollar::before {
+  content: "";
+}
+
+.fa-code::before {
+  content: "";
 }
 
 .fa-keyboard-o::before {
@@ -123,12 +71,20 @@
   content: "";
 }
 
-.fa-table::before {
-  content: "";
+.fa-link::before {
+  content: "";
 }
 
-.fa-columns::before {
-  content: "";
+.fa-list-ul::before {
+  content: "";
+}
+
+.fa-list-ol::before {
+  content: "";
+}
+
+.fa-image::before {
+  content: "";
 }
 
 .editor {

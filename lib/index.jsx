@@ -131,6 +131,9 @@ export class App extends React.Component {
                         {this.renderImageButton()}
                     </span>
                     <span className="toolbar-menu-group">
+                        {this.renderDownloadButton()}
+                    </span>
+                    <span className="toolbar-menu-group">
                         {this.renderMarkButton('strong', 'fa fa-bold', 'Strong <ctrl+b>')}
                         {this.renderMarkButton('emphasis', 'fa fa-italic', 'Emphasis <ctrl+i>')}
                         {this.renderMarkButton('insert', 'fa fa-underline', 'Inserted <ctrl+u>')}
@@ -144,10 +147,8 @@ export class App extends React.Component {
                         {this.renderMarkButton('code', 'fa fa-code', 'Code <ctrl+`>')}
                         {this.renderMarkButton('keyboard', 'fa fa-keyboard-o', 'Keyboard <ctrl+k>')}
                         {this.renderMarkButton('small', 'fa fa-compress', 'Small')}
+                        {this.renderLinkButton()}
                         {this.renderAbbreviationButton()}
-                    </span>
-                    <span className="toolbar-menu-group">
-                        {this.renderDownloadButton()}
                     </span>
                 </div>
             </div>
@@ -160,7 +161,7 @@ export class App extends React.Component {
         return (
             <i className={icon} aria-hidden="true"></i>
         );
-    }
+    };
 
     /* marks */
 
@@ -332,6 +333,45 @@ export class App extends React.Component {
         download.setAttribute('href', 'data:text/text;charset=utf-8,' + encodeURI(data));
         download.setAttribute('download', 'index.html');
         download.click();
+    };
+
+    renderLinkButton = () => {
+        const isActive = this.hasMark('link');
+        const onMouseDown = e => this.insertLink();
+
+        return (
+            <span className="toolbar-menu-button" title="Hyperlink" onMouseDown={onMouseDown} data-active={isActive}>
+                {this.renderIcon('link')}
+            </span>
+        );
+    };
+
+    insertLink = () => {
+        let { state } = this.state;
+
+        if (this.hasMark('link')) {
+            state = state
+                .transform()
+                .removeMark('link')
+                .apply();
+
+            this.onChange(state);
+            return;
+        }
+
+        const href = window.prompt('Enter the url:');
+
+        state = state
+            .transform()
+            .toggleMark({
+                type: 'link',
+                data: {
+                    href: href
+                }
+            })
+            .apply();
+
+        this.onChange(state);
     };
 
     renderAbbreviationButton = () => {

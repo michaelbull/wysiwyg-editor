@@ -3,7 +3,7 @@ import { MARK_TAGS } from '../../tags/Marks.jsx';
 
 export const mark = {
     serialize(node, children) {
-        if (node.kind != 'mark') {
+        if (node.kind !== 'mark') {
             return;
         }
 
@@ -40,7 +40,7 @@ export const mark = {
     deserialize(element, next) {
         const type = MARK_TAGS[element.tagName];
 
-        if (!type || type === 'abbreviation') {
+        if (!type || type === 'abbreviation' || type === 'link') {
             return;
         }
 
