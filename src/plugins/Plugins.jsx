@@ -240,7 +240,7 @@ export const plugins = [
     /* numero */
     ReplaceText({
         trigger: /[0-9]$/,
-        matchBefore: /(No(\.( ?)| ))$/,
+        matchBefore: /(No(\.( ?)|( ?)))$/,
         replacement: char => `№${char}`
     }),
 
