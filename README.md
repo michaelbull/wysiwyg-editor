@@ -1,4 +1,13 @@
-<p align="center"><a href="#readme"><img src="./logo.png" /></a></p>
+<p align="center">
+  <a href="#readme">
+    <img src="./logo.png" />
+  </a>
+</p>
+
+<br />
+<br />
+<br />
+<br />
 
 # wysiwyg-editor
 
