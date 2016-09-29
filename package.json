@@ -6,7 +6,7 @@
     "clean": "rm -rf dist/*",
     "check-updates": "ncu",
     "update-dependencies": "ncu --upgrade && npm install",
-    "dev": "webpack-dev-server --inline --hot --no-info",
+    "dev": "webpack-dev-server --inline --hot --open",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {

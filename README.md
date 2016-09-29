@@ -5,6 +5,28 @@
 A “what-you-see-is-what-you-get” editor built on [React][react] &
 [Slate][slate].
 
+## Demo
+
+A running demonstration can be found [here][demo].
+
+## Building
+
+The project can be built using [webpack][webpack] by running `npm run build`
+which will assemble the distribution under the `./dist` directory. This
+directory can be cleaned by running `npm run clean`.
+
+## Developing
+
+The [webpack-dev-server][dev-server] is installed for development purposes and
+can be run with the command `npm run dev`. This will start the development
+server at [`http://localhost:8080`][localhost] and open it in your browser, with
+[inline mode][inline] and [hot module replacement][hmr] enabled.
+
+## License
+
+This project is available under the terms of the ISC license. See the
+[`LICENSE`][license] file for the copyright information and licensing terms.
+
 ## Features
 
 - Smart typography utilizes [typographic ligatures][ligature] where appropriate
@@ -15,7 +37,7 @@ and toggle formatting.
 document edits to continue across sessions. Once finished, the document may be
 serialized and downloaded as a semantic HTML5 file.
 
-## Quotes
+### Quotes
 
 Straight quotes surrounding a piece of text (e.g. 'single' or "double") are
 substituted for their correct [curly quotation marks][quotes].
@@ -25,7 +47,7 @@ substituted for their correct [curly quotation marks][quotes].
 | "Hello world" | “Hello world” |
 | 'Hello world' | ‘Hello world’ |
 
-## Hyphens
+### Hyphens
 
 Hyphens that occur immediately after a numerical value are substituted for an
 [endash][endash]. Hyphens delimited by spaces are substituted for an
@@ -37,7 +59,7 @@ Hyphens that occur immediately after a numerical value are substituted for an
 | In the range of 10-20. | In the range of 10–20.  |
 | Upon discovering the errors - all 124 of them - the publisher immediately recalled the books. | Upon discovering the errors — all 124 of them — the publisher immediately recalled the books. |
 
-## Primes
+### Primes
 
 Straight quotes that occur immediately after a numerical value are substituted
 with [primes][primes].
@@ -46,7 +68,7 @@ with [primes][primes].
 |--------|-------|
 | He stood 6'1" tall. | He stood 6′1″ tall. |
 
-## Punctuation
+### Punctuation
 
 Three consecutive periods are substituted for an ellipsis.
 
@@ -54,7 +76,7 @@ Three consecutive periods are substituted for an ellipsis.
 |--------|-------|
 | A long time ago in a galaxy far, far away... | A long time ago in a galaxy far, far away… |
 
-## Mathematics
+### Mathematics
 
 When writing mathematical expressions the editor will substitute commonly used
 symbols for their correct replacements. This includes replacing asterisks with
@@ -74,7 +96,7 @@ symbol, as well as supporting fractions, roman numerals, and the
 | sqrt(4) = 2 | √4 = 2 |
 | 360(deg) = 2(pi) rad | 360° = 2π rad |
 
-## Roman Numerals
+### Roman Numerals
 
 The editor can automatically replace decimal number inputs with the equivalent
 in [roman numerals][roman].
@@ -86,7 +108,7 @@ in [roman numerals][roman].
 | roman(87) | ⅬⅩⅩⅩⅦ |
 | roman(808) | ⅮⅭⅭⅭⅧ |
 
-## Currency
+### Currency
 
 Shorthands for currency characters are also available.
 
@@ -96,7 +118,7 @@ Shorthands for currency characters are also available.
 | (yen)  | ¥     |
 | (cent) | ¢     |
 
-## Symbols
+### Symbols
 
 Various symbols can be inserted with common shorthands, such as (c) for the ©
 symbol.
@@ -114,7 +136,7 @@ symbol.
 | (male)   | ♂     |
 | (female) | ♀     |
 
-## Keyboard Symbols
+### Keyboard Symbols
 
 Symbol shorthands are also included for common symbols found on a keyboard.
 
@@ -127,11 +149,17 @@ Symbol shorthands are also included for common symbols found on a keyboard.
 | (undo)   | ↺     |
 | (redo)   | ↻     |
 
-
 [logo]: logo.png
 [react]: https://facebook.github.io/react/
 [ligature]: https://en.wikipedia.org/wiki/Typographic_ligature
 [slate]: https://github.com/ianstormtaylor/slate
+[demo]: https://mikebull94.github.io/wysiwyg-editor/
+[webpack]: https://webpack.github.io/
+[dev-server]: https://github.com/webpack/webpack-dev-server
+[localhost]: http://localhost:8080
+[inline]: https://webpack.github.io/docs/webpack-dev-server.html#inline-mode
+[hmr]: https://webpack.github.io/docs/webpack-dev-server.html#hot-module-replacement
+[license]: https://github.com/MikeBull94/wysiwyg-editor/blob/master/LICENSE
 [endash]: http://www.thepunctuationguide.com/en-dash.html
 [emdash]: http://www.thepunctuationguide.com/em-dash.html
 [hairspace]: https://en.wikipedia.org/wiki/Whitespace_character#Hair_spaces_around_dashes
